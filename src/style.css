@@ -1,0 +1,114 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background: url("background.gif") no-repeat center center fixed;
+  background-size: cover;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 90px;
+}
+
+.tabuleiro {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 1fr);
+}
+
+.celula {
+  width: 120px;
+  height: 120px;
+  background: lightblue;
+}
+
+.celula:hover {
+  background: rgb(135, 161, 240);
+}
+
+.celula-azul {
+  border: solid 2px rgb(0, 1, 44);
+  background: rgb(141, 157, 208);
+  -webkit-animation: shadow-inset-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: shadow-inset-center 0.4s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.celula-vermelha {
+  border: solid 2px rgb(87, 4, 0);
+  background: rgb(184, 1, 1);
+}
+
+.jogoFinalizado {
+  pointer-events: none;
+}
+
+.resetar {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.meuNome::before {
+  content: "🦈";
+  transform: scaleX(-1);
+  display: inline-block;
+}
+
+.meuNome::after {
+  content: "🦈";
+}
+
+.meuNome {
+  font-weight: bold;
+}
+
+.overlay {
+  visibility: hidden;
+  display: flex;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  position: fixed;
+  align-items: center;
+  justify-content: center;
+}
+
+.overlay button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.mensagem {
+  background-color: #424242;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.jogador-azul {
+  color: #1976d2;
+  font-weight: bold;
+}
+
+.jogador-vermelho {
+  color: #c62828;
+  font-weight: bold;
+}
